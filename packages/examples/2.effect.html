@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="../reactivity/dist/reactivity.global.js"></script>
+  <script>
+    let { reactive, effect } = VueReactivity
+    let state = reactive({ name: '张三', list: { a: 200 }, arr: [1, 2, 3] })
+    let arr = reactive([1, 2, 3])
+    effect(() => {
+      app.innerHTML = arr[1] + 'ok' + arr[100] + 'hhhhhh'
+    })
+
+    setTimeout(() => {
+      // state.name = 'lis'
+      arr[100] = 12
+    }, 1000)
+  </script>
+</body>
+
+</html>

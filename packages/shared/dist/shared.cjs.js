@@ -1,0 +1,32 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+// 公共方法
+function isObject(target) {
+    return typeof target === 'object' && target != null;
+}
+// 合并对象
+const extend = Object.assign;
+// 判断
+const isArray = Array.isArray;
+const isFunction = (val) => typeof val === 'function';
+const isNumber = (val) => typeof val === 'number';
+const isString = (val) => typeof val === 'string';
+// 判断数组的key是不是整数
+const isIntegerKey = (key) => parseInt(key) + '' === key;
+// 对象中是否有这个属性
+const hasOwnProperty = Object.prototype.hasOwnProperty;
+const hasOwn = (val, key) => hasOwnProperty.call(val, key);
+const hasChange = (val, oldVal) => val !== oldVal;
+
+exports.extend = extend;
+exports.hasChange = hasChange;
+exports.hasOwn = hasOwn;
+exports.isArray = isArray;
+exports.isFunction = isFunction;
+exports.isIntegerKey = isIntegerKey;
+exports.isNumber = isNumber;
+exports.isObject = isObject;
+exports.isString = isString;
+//# sourceMappingURL=shared.cjs.js.map
