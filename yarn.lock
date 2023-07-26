@@ -55,19 +55,19 @@
   dependencies:
     "@types/node" "*"
 
-"@vue/reactivity@file:D:\\大三前端学习\\vue3源码\\mvvm\\packages\\reactivity":
+"@vue/reactivity@file:D:\\mini-mvvm\\packages\\reactivity":
   "resolved" "file:packages/reactivity"
   "version" "1.0.0"
 
-"@vue/runtime-core@file:D:\\大三前端学习\\vue3源码\\mvvm\\packages\\runtime-core":
+"@vue/runtime-core@file:D:\\mini-mvvm\\packages\\runtime-core":
   "resolved" "file:packages/runtime-core"
   "version" "1.0.0"
 
-"@vue/runtime-dom@file:D:\\大三前端学习\\vue3源码\\mvvm\\packages\\runtime-dom":
+"@vue/runtime-dom@file:D:\\mini-mvvm\\packages\\runtime-dom":
   "resolved" "file:packages/runtime-dom"
   "version" "1.0.0"
 
-"@vue/shared@file:D:\\大三前端学习\\vue3源码\\mvvm\\packages\\shared":
+"@vue/shared@file:D:\\mini-mvvm\\packages\\shared":
   "resolved" "file:packages/shared"
   "version" "1.0.0"
 
@@ -105,7 +105,7 @@
   "resolved" "https://registry.npmmirror.com/estree-walker/-/estree-walker-2.0.2.tgz"
   "version" "2.0.2"
 
-"examples@file:D:\\大三前端学习\\vue3源码\\mvvm\\packages\\examples":
+"examples@file:D:\\mini-mvvm\\packages\\examples":
   "resolved" "file:packages/examples"
   "version" "1.0.0"
 

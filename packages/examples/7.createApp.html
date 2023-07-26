@@ -1,28 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-
-<body>
-  <div id="app">1000</div>
-  <script src="../runtime-dom/dist/runtime-dom.global.js"></script>
-  <script>
-    let { createApp,h } = VueRuntimeDom
-    let App = {
-      setup(props,context){
-        console.log('setup',props,context);
-      },
-      render(proxy){
-        return h('div',{style:{color:"red"}},'hello')
+  <body>
+    <div id="app"></div>
+    <script src="../runtime-dom/dist/runtime-dom.global.js"></script>
+    <script src="../reactivity/dist/reactivity.global.js"></script>
+    <script>
+      let { createApp, h } = VueRuntimeDom
+      let { reactive } = VueReactivit
+      let App = {
+        setup(props, context) {
+          let state = reactive({
+            name: 'liso',
+            isFlag: false,
+          })
+          const fn = () => {
+            state.name = 'zhangsan'
+          }
+          setTimeout(() => {
+            state.isFlag = true
+          }, 2000)
+          return {
+            state,
+            fn,
+          }
+        },
+        render(proxy) {
+          if (proxy.state.isFlag) {
+            return h(
+              'div',
+              { style: { color: 'red' }, onClick: proxy.fn },
+              'hello'
+            )
+          } else {
+            return h('p', { style: { color: 'red' }, onClick: proxy.fn }, 'aaa')
+          }
+        },
       }
-    }
-    createApp(App, { name: 'zs', age: 10 }).mount("#app")
-  </script>
-</body>
-
+      createApp(App, { name: 'zs', age: 10 }).mount('#app')
+    </script>
+  </body>
 </html>
